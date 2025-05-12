@@ -2,16 +2,30 @@ import axios from "axios";
 
 const logPayment = async (name, amount, email, phone, country, address) => {
   try {
-    const response = await axios.post(
-      "https://script.google.com/macros/s/AKfycbzA-z5iYQD7vuP49FMeB6ayuTwuwZ0DtOB4Zgst5gqknEHnmyuwzdSAYXtwIGFjCIVP/exec",
-      { name, amount, email, phone, country, address },
-      {
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8",
-        },
+
+    const sendFormData = async () => {
+      try {
+        const formDataObject = {};
+        formDataObject.name = name;
+        formDataObject.number = phone;
+        formDataObject.address = address;
+        formDataObject.country = country;
+        formDataObject.email = email;
+        formDataObject.amount = amount;
+        await fetch('https://script.google.com/macros/s/AKfycbzO9wW0TPXWKOZF-VVfYl-Xzobu_sLSJQA-pVLmMyzI5nQ3LtZmXQ5xx3RTsVNkL5IW/exec', {
+          redirect: "follow",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+          },
+          body: new URLSearchParams(formDataObject).toString(),
+        });
+      } catch (error) {
+        throw error;
       }
-    );
-    console.log(response);
+    };
+
+    sendFormData();
     console.log("Payment logged:", response.data);
     // Optionally handle success feedback to the user
   } catch (error) {

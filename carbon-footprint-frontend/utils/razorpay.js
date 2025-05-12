@@ -76,7 +76,7 @@ const verifyPayment = async (
 ) => {
   try {
     const response = await axios.post(
-      // "http://localhost:4001/api/payment/verify",
+      // "http://localhost:4001/payment/verify",
       "https://calculator.carbonzero.day/api/payment/verify",
       {
         razorpay_order_id,

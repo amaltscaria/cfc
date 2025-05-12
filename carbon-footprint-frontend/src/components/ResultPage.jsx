@@ -101,7 +101,7 @@ const EmissionsCard = () => {
   console.log(location);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
   const handlePayment = async () => {
-    const settings = setSettings(Math.round(offset) * 100);
+    const settings = setSettings(100);
     const response = await axios(settings);
     console.log(response.data);
     const orderId = response.data.id;
