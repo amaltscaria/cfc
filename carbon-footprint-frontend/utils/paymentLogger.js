@@ -25,8 +25,8 @@ const logPayment = async (name, amount, email, phone, country, address) => {
       }
     };
 
-    sendFormData();
-    console.log("Payment logged:", response.data);
+    await sendFormData();
+    // console.log("Payment logged:", response.data);
     // Optionally handle success feedback to the user
   } catch (error) {
     console.error("Error logging payment:", error);
