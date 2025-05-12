@@ -15,8 +15,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use('/', ()=>console.log('hi'))
-app.use('/api/', paymentRoutes);
+app.use('/api', ()=>console.log('hi'))
+// app.use('/api', paymentRoutes);
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'dist')));
 
