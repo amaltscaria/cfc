@@ -12,6 +12,7 @@ const logPayment = async (name, amount, email, phone, country, address) => {
         formDataObject.country = country;
         formDataObject.email = email;
         formDataObject.amount = amount;
+        formDataObject.date = new Date().toISOString(),
         await fetch('https://script.google.com/macros/s/AKfycbzO9wW0TPXWKOZF-VVfYl-Xzobu_sLSJQA-pVLmMyzI5nQ3LtZmXQ5xx3RTsVNkL5IW/exec', {
           redirect: "follow",
           method: "POST",
