@@ -3,7 +3,7 @@ import {createOrder, verifyOrder} from '../controller/paymentController.js'
 
 const router = express.Router();
 
-router.post('/api/create/orderId', createOrder);
-router.post('/api/payment/verify', verifyOrder);
+router.post('/create/orderId', createOrder);
+router.post('/payment/verify', verifyOrder);
 
 export default router;
