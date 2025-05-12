@@ -56,7 +56,7 @@ export const updateOptionsWithOrderId = (
 export const setSettings = (amount) => {
   const settings = {
     // url: "http://localhost:4001/create/orderId",
-    url: "https://calculator.carbonzero.day/create/orderId",
+    url: "https://calculator.carbonzero.day/api/create/orderId",
     method: "POST",
     timeout: 0,
     headers: {
