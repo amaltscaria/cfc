@@ -56,7 +56,7 @@ export const updateOptionsWithOrderId = (
 export const setSettings = (amount) => {
   const settings = {
     // url: "http://localhost:4001/create/orderId",
-    url: "https://calculator.carbonzero.day/create/orderId",
+    url: "https://calculator.carbonzero.day/api/create/orderId",
     method: "POST",
     timeout: 0,
     headers: {
@@ -77,7 +77,7 @@ const verifyPayment = async (
   try {
     const response = await axios.post(
       // "http://localhost:4001/api/payment/verify",
-      "https://calculator.carbonzero.day/payment/verify",
+      "https://calculator.carbonzero.day/api/payment/verify",
       {
         razorpay_order_id,
         razorpay_payment_id,
