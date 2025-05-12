@@ -23,7 +23,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.use('/', paymentRoutes);
+app.use('api/', paymentRoutes);
 
 app.listen(PORT, () => {
     console.log(`Backend Server listening on PORT ${PORT}`);
